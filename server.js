@@ -8,9 +8,9 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+require("./route/api")(app);
+require("./route/html")(app);
 
-
-// Starts the server to begin listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
