@@ -11,5 +11,20 @@ $(".submit").on("click", function(event) {
 
     console.log(newReservation);
 
+    $.post("/api/tables", newReservation, function(data) {
+        if (data) {
+            alert("Your table is ready!");
+        }
+
+        else {
+            alert("You are on the wait list");
+        }
+
+        $("#reserve-name").val("");
+        $("#reserve-phone").val("");
+        $("#reserve-email").val("");
+        $("#reserve-number").val("");
+    });
+
 })
 
